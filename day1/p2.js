@@ -33,3 +33,6 @@ console.log(sortedById);
 
 console.log("\nSorted by Name:");
 console.log(sortedByName);
+
+console.log("\nSorted by Grade:");
+console.log(sortedByGrade);
