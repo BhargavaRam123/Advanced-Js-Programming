@@ -1,3 +1,21 @@
+function binarySearch(arr, left, right, target) {
+  if (right >= left) {
+    const mid = left + Math.floor((right - left) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    }
+
+    if (arr[mid] > target) {
+      return binarySearch(arr, left, mid - 1, target);
+    }
+
+    return binarySearch(arr, mid + 1, right, target);
+  }
+
+  return -1;
+}
+
 function exponentialSearch(arr, target) {
   const n = arr.length;
 
