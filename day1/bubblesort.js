@@ -1,6 +1,6 @@
 let arr = [1,5,3,8,2,9]
 let l = arr.length
-for(let i=0;i<l;i++)
+for(let i=0;i<l-1;i++)
 {
     for(let j=0;j<l-i-1;j++)
     {
