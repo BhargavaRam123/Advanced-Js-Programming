@@ -30,3 +30,6 @@ const sortedByGrade = bubbleSortStudents(students, "grade");
 
 console.log("Sorted by ID:");
 console.log(sortedById);
+
+console.log("\nSorted by Name:");
+console.log(sortedByName);
