@@ -144,4 +144,7 @@ class DoublyCircularLinkedList {
     this.size--;
     return removedData;
   }
+  isEmpty() {
+    return this.size === 0;
+  }
 }
