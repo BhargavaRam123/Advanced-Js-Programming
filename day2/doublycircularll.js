@@ -54,4 +54,32 @@ class DoublyCircularLinkedList {
     this.size++;
     return this;
   }
+  insertAt(data, index) {
+    if (index < 0 || index > this.size) {
+      return false;
+    }
+
+    if (index === 0) {
+      return this.insertAtBeginning(data);
+    }
+
+    if (index === this.size) {
+      return this.insertAtEnd(data);
+    }
+    const newNode = new Node(data);
+
+    let current = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      current = current.next;
+    }
+    let nextNode = current.next;
+
+    newNode.next = nextNode;
+    newNode.prev = current;
+    current.next = newNode;
+    nextNode.prev = newNode;
+
+    this.size++;
+    return this;
+  }
 }
