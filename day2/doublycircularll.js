@@ -169,4 +169,22 @@ class DoublyCircularLinkedList {
 
     console.log(result);
   }
+  search(data) {
+    if (this.isEmpty()) {
+      return -1;
+    }
+
+    let current = this.head;
+    let index = 0;
+
+    do {
+      if (current.data === data) {
+        return index;
+      }
+      current = current.next;
+      index++;
+    } while (current !== this.head);
+
+    return -1;
+  }
 }
