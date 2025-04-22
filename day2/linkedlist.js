@@ -25,6 +25,7 @@ class linkedList {
   printlinkedlist() {
     let temp = this.head;
     while (temp) {
+      //   console.log("temp value", temp);
       console.log("node->", temp.value);
       temp = temp.next;
     }
