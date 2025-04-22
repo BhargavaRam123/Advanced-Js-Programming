@@ -150,4 +150,23 @@ class DoublyCircularLinkedList {
   getSize() {
     return this.size;
   }
+
+  print() {
+    if (this.isEmpty()) {
+      console.log("List is empty");
+      return;
+    }
+
+    let result = "";
+    let current = this.head;
+
+    do {
+      result += current.data + " <-> ";
+      current = current.next;
+    } while (current !== this.head);
+
+    result += "HEAD";
+
+    console.log(result);
+  }
 }
