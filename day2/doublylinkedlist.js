@@ -9,6 +9,7 @@ class Node {
 class doublylinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
   }
   append(value) {
     if (this.head) {
@@ -19,9 +20,11 @@ class doublylinkedList {
       let node = new Node(value);
       temp.next = node;
       node.prev = temp;
+      this.tail = node;
     } else {
       let node = new Node(value);
       this.head = node;
+      this.tail = node;
     }
   }
   insertathead(value) {
@@ -32,6 +35,7 @@ class doublylinkedList {
       this.head = node;
     } else {
       this.head = node;
+      this.tail = node;
     }
   }
   deletenodeatcertainpos(pos) {
@@ -55,6 +59,13 @@ class doublylinkedList {
       temp = temp.next;
     }
   }
+  reverseprinting() {
+    let temp = this.tail;
+    while (temp) {
+      console.log("node ->", temp.value);
+      temp = temp.prev;
+    }
+  }
 }
 
 const ll = new doublylinkedList();
@@ -64,3 +75,4 @@ ll.append(3);
 ll.insertathead(10);
 ll.deletenodeatcertainpos(2);
 ll.printlinkedlist();
+ll.reverseprinting();
