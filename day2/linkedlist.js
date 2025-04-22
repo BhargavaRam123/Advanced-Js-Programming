@@ -22,6 +22,15 @@ class linkedList {
       this.head = node;
     }
   }
+  insertathead(value) {
+    let node = new Node(value);
+    if (this.head) {
+      node.next = this.head;
+      this.head = node;
+    } else {
+      this.head = node;
+    }
+  }
   printlinkedlist() {
     let temp = this.head;
     while (temp) {
@@ -36,4 +45,5 @@ const ll = new linkedList();
 ll.append(1);
 ll.append(2);
 ll.append(3);
+ll.insertathead(10);
 ll.printlinkedlist();
