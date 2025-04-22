@@ -12,7 +12,7 @@ class linkedList {
   append(value) {
     if (this.head) {
       let temp = this.head;
-      while (temp.next === null) {
+      while (temp.next) {
         temp = temp.next;
       }
       let node = new Node(value);
@@ -30,3 +30,9 @@ class linkedList {
     }
   }
 }
+
+const ll = new linkedList();
+ll.append(1);
+ll.append(2);
+ll.append(3);
+ll.printlinkedlist();
