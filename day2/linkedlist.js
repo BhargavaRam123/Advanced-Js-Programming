@@ -31,6 +31,18 @@ class linkedList {
       this.head = node;
     }
   }
+  deletenodeatcertainpos(pos) {
+    let temp = this.head;
+    let tempnext = this.head.next;
+    pos--;
+    while (pos) {
+      temp = temp.next;
+      tempnext = tempnext.next;
+      pos--;
+    }
+    temp.next = tempnext.next;
+    tempnext = null;
+  }
   printlinkedlist() {
     let temp = this.head;
     while (temp) {
@@ -46,4 +58,5 @@ ll.append(1);
 ll.append(2);
 ll.append(3);
 ll.insertathead(10);
+ll.deletenodeatcertainpos(2);
 ll.printlinkedlist();
