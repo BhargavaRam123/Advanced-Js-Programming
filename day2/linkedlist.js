@@ -16,11 +16,17 @@ class linkedList {
         temp = temp.next;
       }
       let node = new Node(value);
-
       temp.next = node;
     } else {
       let node = new Node(value);
       this.head = node;
+    }
+  }
+  printlinkedlist() {
+    let temp = this.head;
+    while (temp) {
+      console.log("node->", temp.value);
+      temp = temp.next;
     }
   }
 }
