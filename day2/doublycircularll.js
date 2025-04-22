@@ -119,4 +119,29 @@ class DoublyCircularLinkedList {
     this.size--;
     return removedData;
   }
+  removeFrom(index) {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+    if (index === 0) {
+      return this.removeFromBeginning();
+    }
+    if (index === this.size - 1) {
+      return this.removeFromEnd();
+    }
+    let current = this.head;
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+    const prevNode = current.prev;
+    const nextNode = current.next;
+
+    prevNode.next = nextNode;
+    nextNode.prev = prevNode;
+
+    const removedData = current.data;
+
+    this.size--;
+    return removedData;
+  }
 }
