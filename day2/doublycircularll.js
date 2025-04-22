@@ -103,4 +103,20 @@ class DoublyCircularLinkedList {
     this.size--;
     return removedData;
   }
+  removeFromEnd() {
+    if (this.head === null) {
+      return null;
+    }
+    const lastNode = this.head.prev;
+    const removedData = lastNode.data;
+    if (this.head.next === this.head) {
+      this.head = null;
+    } else {
+      const secondLastNode = lastNode.prev;
+      secondLastNode.next = this.head;
+      this.head.prev = secondLastNode;
+    }
+    this.size--;
+    return removedData;
+  }
 }
