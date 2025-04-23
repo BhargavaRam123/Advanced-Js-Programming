@@ -90,6 +90,7 @@ const products = [
     sold: 53,
   },
 ];
+
 let mp = new Map();
 products.map((o) => {
   if (mp.has(o.category)) {
@@ -103,5 +104,23 @@ products.map((o) => {
 });
 console.log("Highest revenue across various categories:");
 for (let [k, v] of mp) {
+  console.log(k, "->", v);
+}
+//Calculate the total revenue by category
+
+let mp1 = new Map();
+products.map((o) => {
+  if (mp1.has(o.category)) {
+    let val = mp1.get(o.category);
+    let rev = o.price * o.sold;
+    mp1.set(o.category, val + rev);
+  } else {
+    let rev = o.price * o.sold;
+    mp1.set(o.category, rev);
+  }
+});
+
+console.log("total revenue across various categories:");
+for (let [k, v] of mp1) {
   console.log(k, "->", v);
 }
