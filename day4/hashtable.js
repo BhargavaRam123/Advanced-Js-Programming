@@ -34,11 +34,24 @@ class Hashtable {
   //     this.arr[index] = [key, value];
   //     this.length++;
   //   }
+
+  //updating get functions for collisions
   get(key) {
     let index = this._hash(key);
-    let [keyv, value] = this.arr[index];
-    console.log("value for the corresponding key is", keyv, ":", value);
+    if (this.arr[index].length > 0) {
+      for (let i = 0; i < arr[index].length; i++) {
+        if (this.arr[index][i][o] === key) {
+          let [keyv, value] = this.arr[index][i];
+          console.log("value for the corresponding key is", keyv, ":", value);
+        }
+      }
+    }
   }
+  //   get(key) {
+  //     let index = this._hash(key);
+  //     let [keyv, value] = this.arr[index];
+  //     console.log("value for the corresponding key is", keyv, ":", value);
+  //   }
   remove(key) {
     let index = this._hash(key);
     if (this.arr[index] && this.arr[index].length) {
