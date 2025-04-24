@@ -21,3 +21,7 @@ class Hashtable {
     console.log("value for the corresponding key is", key, ":", value);
   }
 }
+
+let ht = new Hashtable();
+ht.set("bhargav", 10);
+ht.get("bhargav");
