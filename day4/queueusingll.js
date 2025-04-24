@@ -33,4 +33,10 @@ class Queue {
     this.size--;
     return removedNode.data;
   }
+  peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.front.data;
+  }
 }
