@@ -15,6 +15,9 @@ class Queue {
   isEmpty() {
     return this.items.length === 0;
   }
+  size() {
+    return this.items.length;
+  }
 }
 
 // Example usage:
