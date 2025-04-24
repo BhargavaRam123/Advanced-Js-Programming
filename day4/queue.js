@@ -11,6 +11,10 @@ class Queue {
   peek() {
     return this.isEmpty() ? "Queue is empty" : this.items[0];
   }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
 }
 
 // Example usage:
