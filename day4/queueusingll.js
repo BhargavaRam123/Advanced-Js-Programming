@@ -39,4 +39,10 @@ class Queue {
     }
     return this.front.data;
   }
+  isEmpty() {
+    return this.size === 0;
+  }
+  getSize() {
+    return this.size;
+  }
 }
