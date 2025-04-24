@@ -19,6 +19,7 @@ class BinaryTree {
       while (true) {
         if (v > curr.value) {
           if (curr.right === null) {
+            console.log("inserted to the right of", curr.value);
             curr.right = node;
             break;
           } else {
@@ -26,6 +27,7 @@ class BinaryTree {
           }
         } else {
           if (curr.left === null) {
+            console.log("inserted to the left of", curr.value);
             curr.left = node;
             break;
           } else {
@@ -48,15 +50,15 @@ class BinaryTree {
       return;
     }
     console.log("val:", n.value);
-    this.inordertraversal(n.left);
-    this.inordertraversal(n.right);
+    this.preordertraversal(n.left);
+    this.preordertraversal(n.right);
   }
   postordertraversal(n = this.root) {
     if (n === null) {
       return;
     }
-    this.inordertraversal(n.left);
-    this.inordertraversal(n.right);
+    this.postordertraversal(n.left);
+    this.postordertraversal(n.right);
     console.log("val:", n.value);
   }
 }
@@ -65,6 +67,12 @@ const tr = new BinaryTree();
 tr.insert(5);
 tr.insert(2);
 tr.insert(13);
+tr.insert(7);
+tr.insert(23);
+tr.insert(6);
+console.log("break");
 tr.inordertraversal();
+console.log("break");
 tr.preordertraversal();
+console.log("break");
 tr.postordertraversal();
