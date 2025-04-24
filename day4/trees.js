@@ -10,4 +10,29 @@ class BinaryTree {
   constructor() {
     this.root = null;
   }
+  insert(v) {
+    let node = new Node(v);
+    if (!this.root) {
+      this.root = node;
+    } else {
+      let curr = this.root;
+      while (true) {
+        if (v > curr.value) {
+          if (curr.right === null) {
+            curr.right = node;
+            break;
+          } else {
+            curr = curr.right;
+          }
+        } else {
+          if (curr.left === null) {
+            curr.left = node;
+            break;
+          } else {
+            curr = curr.left;
+          }
+        }
+      }
+    }
+  }
 }
