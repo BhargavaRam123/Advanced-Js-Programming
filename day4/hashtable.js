@@ -15,7 +15,8 @@ class Hashtable {
 
   set(key, value) {
     let index = this._hash(key);
-    if (this.arr[index].length > 0) {
+    // console.log(this.arr[index]);
+    if (this.arr[index]?.length > 0) {
       for (let i = 0; i < this.arr[index].length; i++) {
         if (this.arr[index][i][0] === key) {
           this.arr[index][i][1] = value;
@@ -39,8 +40,8 @@ class Hashtable {
   get(key) {
     let index = this._hash(key);
     if (this.arr[index].length > 0) {
-      for (let i = 0; i < arr[index].length; i++) {
-        if (this.arr[index][i][o] === key) {
+      for (let i = 0; i < this.arr[index].length; i++) {
+        if (this.arr[index][i][0] === key) {
           let [keyv, value] = this.arr[index][i];
           console.log("value for the corresponding key is", keyv, ":", value);
         }
@@ -66,6 +67,5 @@ class Hashtable {
 
 let ht = new Hashtable();
 ht.set("bhargav", 10);
+ht.set("bhargav", 20);
 ht.get("bhargav");
-console.log(ht.remove("bhargav"));
-console.log(ht.remove("bhargav"));
