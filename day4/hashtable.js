@@ -3,12 +3,13 @@ class Hashtable {
     this.arr = new Array(127);
     this.length = 0;
   }
+  //since our table size is 127 buckets we need to ensure that our hash value is less than 127
   _hash(val) {
     let hash = 0;
     for (let i = 0; i < val.length; i++) {
       hash += val.charCodeAt(i);
     }
-    return hash;
+    return hash % this.arr.length;
   }
   set(key, value) {
     let index = this._hash(key);
@@ -17,8 +18,8 @@ class Hashtable {
   }
   get(key) {
     let index = this._hash(key);
-    let [key, value] = this.arr[index];
-    console.log("value for the corresponding key is", key, ":", value);
+    let [keyv, value] = this.arr[index];
+    console.log("value for the corresponding key is", keyv, ":", value);
   }
 }
 
