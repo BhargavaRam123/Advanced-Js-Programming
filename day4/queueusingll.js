@@ -45,4 +45,13 @@ class Queue {
   getSize() {
     return this.size;
   }
+  print() {
+    let current = this.front;
+    const elements = [];
+    while (current) {
+      elements.push(current.data);
+      current = current.next;
+    }
+    console.log(elements.join(" -> "));
+  }
 }
