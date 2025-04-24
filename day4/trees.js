@@ -43,6 +43,14 @@ class BinaryTree {
     console.log("val:", n.value);
     this.inordertraversal(n.right);
   }
+  preordertraversal(n = this.root) {
+    if (n === null) {
+      return;
+    }
+    console.log("val:", n.value);
+    this.inordertraversal(n.left);
+    this.inordertraversal(n.right);
+  }
 }
 
 const tr = new BinaryTree();
@@ -50,3 +58,4 @@ tr.insert(5);
 tr.insert(2);
 tr.insert(13);
 tr.inordertraversal();
+tr.preordertraversal();
