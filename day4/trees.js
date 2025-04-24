@@ -35,7 +35,7 @@ class BinaryTree {
       }
     }
   }
-  inordertraversal(n = this.head) {
+  inordertraversal(n = this.root) {
     if (n === null) {
       return;
     }
@@ -44,3 +44,9 @@ class BinaryTree {
     this.inordertraversal(n.right);
   }
 }
+
+const tr = new BinaryTree();
+tr.insert(5);
+tr.insert(2);
+tr.insert(13);
+tr.inordertraversal();
