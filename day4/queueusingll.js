@@ -10,4 +10,15 @@ class Queue {
     this.rear = null;
     this.size = 0;
   }
+  enqueue(data) {
+    const newNode = new Node(data);
+    if (this.isEmpty()) {
+      this.front = newNode;
+      this.rear = newNode;
+    } else {
+      this.rear.next = newNode;
+      this.rear = newNode;
+    }
+    this.size++;
+  }
 }
