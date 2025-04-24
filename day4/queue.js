@@ -8,6 +8,9 @@ class Queue {
   dequeue() {
     return this.isEmpty() ? "Queue is empty" : this.items.shift();
   }
+  peek() {
+    return this.isEmpty() ? "Queue is empty" : this.items[0];
+  }
 }
 
 // Example usage:
