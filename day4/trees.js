@@ -35,4 +35,12 @@ class BinaryTree {
       }
     }
   }
+  inordertraversal(n = this.head) {
+    if (n === null) {
+      return;
+    }
+    this.inordertraversal(n.left);
+    console.log("val:", n.value);
+    this.inordertraversal(n.right);
+  }
 }
