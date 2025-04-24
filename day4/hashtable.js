@@ -11,11 +11,29 @@ class Hashtable {
     }
     return hash % this.arr.length;
   }
+  //updating set function to handle collisions
+
   set(key, value) {
     let index = this._hash(key);
-    this.arr[index] = [key, value];
+    if (this.arr[index].length > 0) {
+      for (let i = 0; i < this.arr[index].length; i++) {
+        if (this.arr[index][i][0] === key) {
+          this.arr[index][i][1] = value;
+          return;
+        }
+      }
+      this.arr[index].push([key, value]);
+    } else {
+      this.arr[index] = [];
+      this.arr[index].push([key, value]);
+    }
     this.length++;
   }
+  //   set(key, value) {
+  //     let index = this._hash(key);
+  //     this.arr[index] = [key, value];
+  //     this.length++;
+  //   }
   get(key) {
     let index = this._hash(key);
     let [keyv, value] = this.arr[index];
