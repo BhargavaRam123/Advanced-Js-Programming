@@ -5,6 +5,9 @@ class Queue {
   enqueue(element) {
     this.items.push(element);
   }
+  dequeue() {
+    return this.isEmpty() ? "Queue is empty" : this.items.shift();
+  }
 }
 
 // Example usage:
