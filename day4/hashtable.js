@@ -10,4 +10,9 @@ class Hashtable {
     }
     return hash;
   }
+  set(key, value) {
+    let index = this._hash(key);
+    this.arr[index] = [key, value];
+    this.length++;
+  }
 }
