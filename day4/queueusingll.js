@@ -21,4 +21,16 @@ class Queue {
     }
     this.size++;
   }
+  dequeue() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    const removedNode = this.front;
+    this.front = this.front.next;
+    if (this.front === null) {
+      this.rear = null;
+    }
+    this.size--;
+    return removedNode.data;
+  }
 }
