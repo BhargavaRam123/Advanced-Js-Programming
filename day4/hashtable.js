@@ -21,8 +21,20 @@ class Hashtable {
     let [keyv, value] = this.arr[index];
     console.log("value for the corresponding key is", keyv, ":", value);
   }
+  remove(key) {
+    let index = this._hash(key);
+    if (this.arr[index] && this.arr[index].length) {
+      this.arr[index] = undefined;
+      this.length--;
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 let ht = new Hashtable();
 ht.set("bhargav", 10);
 ht.get("bhargav");
+console.log(ht.remove("bhargav"));
+console.log(ht.remove("bhargav"));
