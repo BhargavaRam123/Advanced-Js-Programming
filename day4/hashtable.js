@@ -15,4 +15,9 @@ class Hashtable {
     this.arr[index] = [key, value];
     this.length++;
   }
+  get(key) {
+    let index = this._hash(key);
+    let [key, value] = this.arr[index];
+    console.log("value for the corresponding key is", key, ":", value);
+  }
 }
