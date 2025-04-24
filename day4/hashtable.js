@@ -68,4 +68,6 @@ class Hashtable {
 let ht = new Hashtable();
 ht.set("bhargav", 10);
 ht.set("bhargav", 20);
-ht.get("bhargav");
+ht.set("hbargav", 100);
+ht.set("hbargav", 101);
+ht.get("hbargav");
