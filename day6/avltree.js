@@ -71,4 +71,24 @@ class AvlTree {
     this._updateHeight(temp);
     return temp;
   }
+  _rightrotation() {
+    const temp = node.left;
+    node.left = temp.right;
+    if (temp.right) {
+      temp.right.parent = node;
+    }
+    temp.right = node;
+    temp.parent = node.parent;
+    node.parent = temp;
+    if (temp.parent) {
+      if (temp.parent.left === node) {
+        temp.parent.left = temp;
+      } else if (temp.parent.right === node) {
+        temp.parent.right = temp;
+      }
+    }
+    this._updateHeight(node);
+    this._updateHeight(temp);
+    return temp;
+  }
 }
