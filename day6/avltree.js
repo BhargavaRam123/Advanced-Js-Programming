@@ -115,4 +115,44 @@ class AvlTree {
     const rightsubtreeheight = this._getnodeheight(node.right);
     return leftsubtreeheight - rightsubtreeheight;
   }
+  levelOrderTraversal() {
+    // Create an empty array to store the traversed nodes
+    const temp = [];
+    // Create an array to keep track of the current level of nodes
+    const queue = [];
+
+    // If the tree has a root, add it to the queue
+    if (this.root) {
+      queue.push(this.root);
+    }
+
+    // Keep traversing the tree while there are nodes in the queue
+    while (queue.length) {
+      // Create an array to store the nodes of the current level
+      const subTemp = [];
+      // Store the number of nodes in the current level
+      const len = queue.length;
+
+      // Iterate through the current level of nodes
+      for (let i = 0; i < len; i += 1) {
+        // Dequeue the first node in the queue
+        const node = queue.shift();
+        // Push the node's value to the subTemp array
+        subTemp.push(node.value);
+        // If the node has a left child, add it to the queue
+        if (node.left) {
+          queue.push(node.left);
+        }
+        // If the node has a right child, add it to the queue
+        if (node.right) {
+          queue.push(node.right);
+        }
+      }
+
+      // Push the subTemp array to the temp array
+      temp.push(subTemp);
+    }
+    // Return the final temp array
+    return temp;
+  }
 }
