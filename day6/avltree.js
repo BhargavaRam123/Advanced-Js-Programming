@@ -156,3 +156,9 @@ class AvlTree {
     return temp;
   }
 }
+
+const tr = new AvlTree();
+tr.insert(1);
+tr.insert(2);
+tr.insert(3);
+console.log(tr.levelOrderTraversal());
