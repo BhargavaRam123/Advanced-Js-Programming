@@ -36,4 +36,19 @@ class AvlTree {
     const rightsubtreeheight = this._getnodeheight(node.right);
     node.height = Math.max(leftsubtreeheight, rightsubtreeheight) + 1;
   }
+  _balance(node) {
+    if (!node) return node;
+    const nodeBF = this._getbalancefactor(node);
+    if (nodeBF > 1) {
+      if (this._getbalancefactor(node.left) < 0) {
+        return this._leftrightrotation(node);
+      }
+      return this._rightrotation(node);
+    } else if (nodeBF < -1) {
+      if (this._getbalancefactor(node.right) > 0)
+        return this._rightleftrotation(node);
+      return this._leftrotation(node);
+    }
+    return node;
+  }
 }
