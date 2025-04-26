@@ -99,4 +99,11 @@ class AvlTree {
     node.right = this._rightrotation(node.right);
     return this._leftrotation(node);
   }
+  _findmin(node = this.root) {
+    let currentnode = node;
+    while (currentnode && currentnode.left) {
+      currentnode = currentnode.left;
+    }
+    return currentnode;
+  }
 }
