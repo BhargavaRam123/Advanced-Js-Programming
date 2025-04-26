@@ -7,3 +7,9 @@ class AvlTreeNode {
     this.height = 0;
   }
 }
+class AvlTree {
+  constructor() {
+    this.root = null;
+  }
+  insert(value) {}
+}
