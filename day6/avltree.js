@@ -91,4 +91,8 @@ class AvlTree {
     this._updateHeight(temp);
     return temp;
   }
+  _leftrightrotation(node) {
+    node.left = this._leftrotation(node.left);
+    return this._rightrotation(node);
+  }
 }
