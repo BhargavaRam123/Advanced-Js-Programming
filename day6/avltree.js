@@ -95,4 +95,8 @@ class AvlTree {
     node.left = this._leftrotation(node.left);
     return this._rightrotation(node);
   }
+  _rightleftrotation(node) {
+    node.right = this._rightrotation(node.right);
+    return this._leftrotation(node);
+  }
 }
