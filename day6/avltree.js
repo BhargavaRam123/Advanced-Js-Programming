@@ -106,4 +106,8 @@ class AvlTree {
     }
     return currentnode;
   }
+  _getnodeheight(node) {
+    if (!node) return -1;
+    return node.height;
+  }
 }
