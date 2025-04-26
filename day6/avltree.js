@@ -31,4 +31,9 @@ class AvlTree {
       this.root.parent = null;
     }
   }
+  _updateHeight(node) {
+    const leftsubtreeheight = this._getnodeheight(node.left);
+    const rightsubtreeheight = this._getnodeheight(node.right);
+    node.height = Math.max(leftsubtreeheight, rightsubtreeheight) + 1;
+  }
 }
