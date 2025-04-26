@@ -51,4 +51,24 @@ class AvlTree {
     }
     return node;
   }
+  _leftrotation(node) {
+    const temp = node.right;
+    node.right = temp.left;
+    if (temp.left) {
+      temp.left.parent = node;
+    }
+    temp.left = node;
+    temp.parent = node.parent;
+    node.parent = temp;
+    if (temp.parent) {
+      if (temp.parent.left === node) {
+        temp.parent.left = temp;
+      } else if (temp.parent.right === node) {
+        temp.parent.right = temp;
+      }
+    }
+    this._updateHeight(node);
+    this._updateHeight(temp);
+    return temp;
+  }
 }
