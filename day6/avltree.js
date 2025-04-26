@@ -110,4 +110,9 @@ class AvlTree {
     if (!node) return -1;
     return node.height;
   }
+  _getbalancefactor(node) {
+    const leftsubtreeheight = this._getnodeheight(node.left);
+    const rightsubtreeheight = this._getnodeheight(node.right);
+    return leftsubtreeheight - rightsubtreeheight;
+  }
 }
