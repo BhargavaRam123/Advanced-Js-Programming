@@ -37,7 +37,7 @@
 // g.addEdge(2, 3);
 // g.bfs();
 
-class bfs {
+class graph {
   constructor() {
     this.adjacencylist = {};
   }
@@ -52,13 +52,37 @@ class bfs {
     let queue = [start];
     let result = [];
     let visited = {};
+    visited[start] = true;
     while (queue.length > 0) {
       let value = queue.shift();
-      visited[value] = true;
+      // console.log("value is ", value);
       result.push(value);
       this.adjacencylist[value].forEach((element) => {
-        if (!visited[element]) value.push(element);
+        if (!visited[element]) {
+          visited[element] = true;
+          queue.push(element);
+        }
       });
     }
+    return result;
   }
 }
+const g = new graph();
+g.addvertex("1");
+g.addvertex("2");
+g.addvertex("3");
+g.addvertex("4");
+g.addvertex("5");
+g.addvertex("6");
+g.addvertex("10");
+g.addvertex("11");
+g.addedge("1", "2");
+g.addedge("1", "6");
+g.addedge("2", "4");
+g.addedge("2", "3");
+g.addedge("6", "10");
+g.addedge("4", "11");
+g.addedge("10", "11");
+g.addedge("3", "5");
+const l = g.bfstraversal("1");
+console.log("result array:", l);
