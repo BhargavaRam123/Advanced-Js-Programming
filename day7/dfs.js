@@ -48,4 +48,36 @@ class Graph {
   addvertex(v) {
     this.adjacencylist[v] = [];
   }
+  addedge(v, w) {
+    this.adjacencylist[v].push(w);
+    this.adjacencylist[w].push(v);
+  }
+  dfsrecursive(start) {
+    let result = [];
+    let visited = {};
+    let adj = this.adjacencylist;
+    (function recursion(vertex) {
+      visited[vertex] = true;
+      result.push(vertex);
+      for (let adjnode of adj[vertex]) {
+        if (!visited[adjnode]) {
+          recursion(adjnode);
+        }
+      }
+    })(start);
+    return result;
+  }
 }
+const g = new Graph();
+g.addvertex("a");
+g.addvertex("b");
+g.addvertex("c");
+g.addvertex("d");
+g.addvertex("e");
+g.addedge("a", "b");
+g.addedge("a", "c");
+g.addedge("b", "c");
+g.addedge("b", "d");
+g.addedge("c", "e");
+const l = g.dfsrecursive("a");
+console.log("resultant array is", l);
