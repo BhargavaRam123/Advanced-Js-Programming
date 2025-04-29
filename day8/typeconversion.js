@@ -19,3 +19,9 @@ obj.valueOf = function () {
 
 console.log(obj - 5); // logs: 94 // hint is "number"
 console.log(obj + 3); // logs: 102 // hint is "default"
+
+console.log(obj + " points"); // logs: "99 points"
+
+// Next: strict equality operators do not coerce into type conversion.
+console.log(obj == 99); // logs: true // hint is "default"
+console.log(obj === 99); // logs: false // no hint, obj is not converted"
