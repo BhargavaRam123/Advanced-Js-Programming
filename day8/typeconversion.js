@@ -12,3 +12,10 @@ let obj = {
 // Then it coerces this string primitive to a number to be able to carry out the subtraction.
 // The string primitive converts to NaN (Not a Number).
 console.log(obj - 5); // logs: NaN // NaN - 5 = NaN
+
+obj.valueOf = function () {
+  return this.score;
+}; // custom method valueOf() is added to obj.
+
+console.log(obj - 5); // logs: 94 // hint is "number"
+console.log(obj + 3); // logs: 102 // hint is "default"
