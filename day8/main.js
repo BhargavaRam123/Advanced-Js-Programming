@@ -20,5 +20,7 @@ function Country(name, population) {
   };
 }
 
-let func = new Country("India", 140000);
+let func = new Country("India", 140000); // this will return a object
+let object = Country("India", 140000); // this will return a object
 console.log(func.toString());
+console.log(object);
