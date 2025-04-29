@@ -9,3 +9,8 @@ Object.getPrototypeOf(obj).valueOf = function () {
   return this.age;
 };
 console.log(obj.valueOf());
+
+let obj2 = {
+  name: "value",
+};
+console.log(obj2.valueOf());
