@@ -11,3 +11,9 @@ Object.defineProperty(obj, "key1", {
 
 delete obj.key1;
 console.log(obj);
+
+Object.defineProperty(obj, "key1", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
