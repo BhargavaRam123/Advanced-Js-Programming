@@ -7,6 +7,14 @@ function fetchdata(id) {
     }, 500);
   });
 }
+function fetchdatap(id) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`ppromise ${id} resolved`);
+      resolve(`ppromise ${id} resolved`);
+    }, 500);
+  });
+}
 
 async function fetchsequentially() {
   let results = [];
@@ -16,5 +24,17 @@ async function fetchsequentially() {
   }
   return results;
 }
+
+function fetchparallel() {
+  let results = items.map((id) => fetchdatap(id));
+  return Promise.all(results).then((values) => {
+    console.log("results from parallel execution is:", values);
+    return values;
+  });
+}
+
+fetchparallel().then((ans) => {
+  console.log("ans value:", ans);
+});
 
 fetchsequentially().then((val) => console.log(val));
