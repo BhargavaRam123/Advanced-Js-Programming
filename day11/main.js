@@ -5,5 +5,9 @@ function fetchdata() {
     }, 1000);
   });
 }
-let val = fetchdata().then((v) => v);
-console.log(val + 1);
+async function exp() {
+  let val = await fetchdata();
+  console.log("using await", val);
+  return val;
+}
+console.log(exp());
