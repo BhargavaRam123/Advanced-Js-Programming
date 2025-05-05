@@ -6,6 +6,15 @@
         }
     }
      
+
+    class propertyRequiredError extends validationerror{
+        constructor(msg)
+        {
+            super("missing property:"+msg)
+            this.name = "propertyRequireddError"
+            this.property = msg
+        }
+    }
     function test(){
         throw new validationerror("whoops!")
     }
