@@ -19,4 +19,4 @@ function rungenerator(gen)
         })
     }
     handle(iterator.next())
-}
+}//you can use return on the generator object to essential stopping the generator something like this obj.return(20)
