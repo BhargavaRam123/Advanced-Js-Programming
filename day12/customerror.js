@@ -21,10 +21,13 @@
         }
     }
 
-    let jsondata = `{"name":"d"}`
+    let jsondata = `{"name":""}`
 
     try {
         readUser(jsondata)
     } catch (error) {
-        console.log(error);
+        if(error instanceof validationerror)
+            console.log("validationerror->",error);
+        if(error instanceof SyntaxError)
+            console.log("syntaxerror->",error)
     }
