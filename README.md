@@ -72,18 +72,9 @@ Modern asynchronous programming using async/await syntax, including error handli
 Advanced implementation of async generators, async iterators, and for-await-of loops for handling streams of asynchronous data. Includes practical examples of pagination, data streaming, and lazy evaluation patterns.
 
 ## Advanced Programming Concepts
-
-### Currying & Function Composition
-Functional programming techniques including currying implementations, partial application patterns, and function composition for creating reusable and modular code architectures.
-
 ### Hoisting Mechanics
 Deep understanding of variable and function hoisting behavior, temporal dead zones, and execution context creation. Includes practical examples demonstrating scope resolution and identifier lookup processes.
 
-### Callback Patterns
-Comprehensive callback implementations including error-first callbacks, callback hell solutions, and callback-to-Promise conversion techniques. Demonstrates proper callback design and asynchronous control flow management.
-
-### Microtask Queue Management
-Advanced understanding of JavaScript's event loop, microtask scheduling, and task prioritization. Includes practical implementations demonstrating execution order, Promise resolution timing, and performance implications.
 
 ## Key Technical Achievements
 
